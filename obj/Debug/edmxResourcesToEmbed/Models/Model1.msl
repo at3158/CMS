@@ -4,6 +4,7 @@
     <EntitySetMapping Name="PEO">
       <EntityTypeMapping TypeName="TESTDBModel.PEO">
         <MappingFragment StoreEntitySet="PEO">
+          <ScalarProperty Name="TEXT" ColumnName="TEXT" />
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />

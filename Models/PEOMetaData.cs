@@ -22,6 +22,9 @@ namespace CMS.Models
              //public string CREATEDATE { get; set; }
              [DataType(DataType.Date)]
              public System.DateTime CREATEDATE { get; set; }
+             [DisplayName("備註")]
+             [UIHint("Html")]
+             public string TEXT { get; set; }
          }
     }
 

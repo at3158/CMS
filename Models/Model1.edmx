@@ -11,7 +11,8 @@
           </Key>
           <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="CREATEDATE" Type="smalldatetime" />
+          <Property Name="CREATEDATE" Type="datetime" />
+          <Property Name="TEXT" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="TESTDBModelStoreContainer">
           <EntitySet Name="PEO" EntityType="Self.PEO" Schema="dbo" store:Type="Tables" />
@@ -26,7 +27,8 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="CREATEDATE" Type="DateTime" Precision="3" />
+          <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="TESTDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PEO" EntityType="Self.PEO" />
@@ -40,6 +42,7 @@
           <EntitySetMapping Name="PEO">
             <EntityTypeMapping TypeName="TESTDBModel.PEO">
               <MappingFragment StoreEntitySet="PEO">
+                <ScalarProperty Name="TEXT" ColumnName="TEXT" />
                 <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />

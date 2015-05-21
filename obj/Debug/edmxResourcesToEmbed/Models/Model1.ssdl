@@ -6,7 +6,8 @@
     </Key>
     <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="CREATEDATE" Type="smalldatetime" />
+    <Property Name="CREATEDATE" Type="datetime" />
+    <Property Name="TEXT" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="TESTDBModelStoreContainer">
     <EntitySet Name="PEO" EntityType="Self.PEO" Schema="dbo" store:Type="Tables" />

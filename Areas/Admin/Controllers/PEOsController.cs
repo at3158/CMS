@@ -46,10 +46,11 @@ namespace CMS.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,NAME,CREATEDATE")] PEO pEO)
+        public ActionResult Create([Bind(Include = "ID,NAME,CREATEDATE,TEXT")] PEO pEO)
         {
             if (ModelState.IsValid)
             {
+                pEO.CREATEDATE = DateTime.Now;
                 db.PEO.Add(pEO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +79,7 @@ namespace CMS.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,NAME,CREATEDATE")] PEO pEO)
+        public ActionResult Edit([Bind(Include = "ID,NAME,CREATEDATE,TEXT")] PEO pEO)
         {
             if (ModelState.IsValid)
             {

@@ -17,5 +17,6 @@ namespace CMS.Models
         public string ID { get; set; }
         public string NAME { get; set; }
         public Nullable<System.DateTime> CREATEDATE { get; set; }
+        public string TEXT { get; set; }
     }
 }
