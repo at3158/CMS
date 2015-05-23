@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Models;
+using PagedList; //ToPageList() must using PagedList
 
 namespace CMS.Areas.Admin.Controllers
 {
@@ -15,9 +16,23 @@ namespace CMS.Areas.Admin.Controllers
         private TESTDBEntities db = new TESTDBEntities();
 
         // GET: Admin/PEOs
-        public ActionResult Index()
+        public ActionResult Index(string q,int page=1,int pagesize=3)
         {
-            return View(db.PEO.ToList());
+            //LIST all DATA
+            //return View(db.PEO.ToList());
+
+            //QUERY-WHERE 
+            //var query = db.PEO.Where(c => c.ID=="001");
+            //return View(query.ToList());
+           
+            //pagelist
+            var model = from s in db.PEO
+                           select s;
+
+            var result = model.OrderBy(X => X.ID).ToPagedList(page,pagesize);
+            return View(result);
+
+            
         }
 
         // GET: Admin/PEOs/Details/5

@@ -110,4 +110,7 @@ C:\Projects\MVC5\CMS\CMS\bin\AntiXssLibrary.dll
 C:\Projects\MVC5\CMS\CMS\bin\HtmlSanitizationLibrary.dll
 C:\Projects\MVC5\CMS\CMS\bin\AntiXssLibrary.xml
 C:\Projects\MVC5\CMS\CMS\bin\HtmlSanitizationLibrary.xml
-C:\Projects\MVC5\CMS\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
+C:\Projects\MVC5\CMS\CMS\bin\PagedList.dll
+C:\Projects\MVC5\CMS\CMS\bin\PagedList.Mvc.dll
+C:\Projects\MVC5\CMS\CMS\bin\PagedList.xml
+C:\Projects\MVC5\CMS\CMS\bin\PagedList.Mvc.xml
