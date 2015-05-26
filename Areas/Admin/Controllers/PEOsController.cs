@@ -16,8 +16,34 @@ namespace CMS.Areas.Admin.Controllers
         private TESTDBEntities db = new TESTDBEntities();
 
         // GET: Admin/PEOs
+  
         public ActionResult Index(string q,int page=1,int pagesize=3)
-        {
+      {
+            //query
+            
+            var model = db.PEO.AsQueryable();
+            if(string.IsNullOrWhiteSpace(q))
+            {
+                //ViewData.Model = model.ToList();
+
+                //q = "001";
+                //ViewData.Model = model.Where(d => d.ID.Contains(q));
+
+
+                //q = "001";
+                //model = model.Where(o => o.ID.Contains(q));
+
+                model = model;
+               
+            }
+            else
+            {
+                model = model.Where(o => o.ID.Contains(q));
+            }
+
+            var result = model.OrderBy(X => X.ID).ToPagedList(page, pagesize);
+            return View(result);
+
             //LIST all DATA
             //return View(db.PEO.ToList());
 
@@ -26,11 +52,11 @@ namespace CMS.Areas.Admin.Controllers
             //return View(query.ToList());
            
             //pagelist
-            var model = from s in db.PEO
-                           select s;
+            //var model = from s in db.PEO
+            //               select s;
 
-            var result = model.OrderBy(X => X.ID).ToPagedList(page,pagesize);
-            return View(result);
+            //var result = model.OrderBy(X => X.ID).ToPagedList(page,pagesize);
+            //return View(result);
 
             
         }

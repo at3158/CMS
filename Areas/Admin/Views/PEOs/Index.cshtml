@@ -2,11 +2,23 @@
 @using PagedList.Mvc;
 @model IEnumerable<CMS.Models.PEO>
 
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<div>
+
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            query: @Html.TextBox("q", "", new { @class = "form-control", @Style = "display:inline" })
+            <button type="submit" class="btn btn-default">搜尋</button>
+        </p>
+    }
+</div>
 
 <p>
     @Html.ActionLink("Create New", "Create")
